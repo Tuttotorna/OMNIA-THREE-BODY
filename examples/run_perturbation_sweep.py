@@ -205,8 +205,85 @@ plt.savefig(
 
 plt.show()
 
+
+fig = plt.figure(figsize=(16, 5))
+
+td_plot = np.where(
+    np.array(td_vals) < 0,
+    np.nan,
+    np.array(td_vals),
+)
+
+ax1 = fig.add_subplot(1, 3, 1)
+
+ax1.plot(
+    eps_vals,
+    td_plot,
+    marker="o",
+    linewidth=2,
+)
+
+ax1.set_xscale("log")
+
+ax1.set_title("Divergence Time vs Perturbation")
+ax1.set_xlabel("Perturbation ε")
+ax1.set_ylabel("TΔ")
+
+ax1.grid(True, alpha=0.3)
+
+ax2 = fig.add_subplot(1, 3, 2)
+
+ax2.plot(
+    eps_vals,
+    omega_vals,
+    marker="o",
+    linewidth=2,
+)
+
+ax2.set_xscale("log")
+
+ax2.set_title("Residual Coherence vs Perturbation")
+ax2.set_xlabel("Perturbation ε")
+ax2.set_ylabel("Ω")
+
+ax2.grid(True, alpha=0.3)
+
+ax3 = fig.add_subplot(1, 3, 3)
+
+ax3.plot(
+    eps_vals,
+    iri_vals,
+    marker="o",
+    linewidth=2,
+)
+
+ax3.set_xscale("log")
+
+ax3.set_title("Irreversibility vs Perturbation")
+ax3.set_xlabel("Perturbation ε")
+ax3.set_ylabel("IRI")
+
+ax3.grid(True, alpha=0.3)
+
+fig.suptitle(
+    "OMNIA-THREE-BODY — Perturbation Regime Sweep",
+    fontsize=16,
+)
+
+plt.tight_layout()
+
+plt.savefig(
+    "results/perturbation_sweep_dashboard.png",
+    dpi=300,
+    bbox_inches="tight",
+)
+
+plt.show()
+
+
 print("\nSaved:")
 print("results/perturbation_sweep.json")
 print("results/tdelta_vs_perturbation.png")
 print("results/omega_vs_perturbation.png")
 print("results/iri_vs_perturbation.png")
+print("results/perturbation_sweep_dashboard.png")
