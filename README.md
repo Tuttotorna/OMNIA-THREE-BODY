@@ -24,9 +24,65 @@ Structural response under increasing perturbation:
 
 ![Perturbation Sweep Dashboard](https://raw.githubusercontent.com/Tuttotorna/OMNIA-THREE-BODY/main/results/perturbation_sweep_dashboard.png)
 
+Observed structure:
+
+```text
+ε increases
+↓
+TΔ decreases
+Ω decreases
+IRI increases
+
+Interpretation:
+
+larger initial perturbation
+=
+shorter coherence survival time
++
+lower residual coherence
++
+higher irreversible divergence
+
+
 ---
 
-## Core idea
+Cross-representation divergence
+
+The same three-body dynamics can collapse in one representation while remaining stable in another.
+
+
+
+Observed structure:
+
+cartesian coordinates
+→ strong divergence
+
+pairwise distances
+→ even faster collapse
+
+total energy
+→ relatively stable
+
+angular momentum
+→ almost invariant
+
+center of mass
+→ almost invariant
+
+Core observation:
+
+the same system
+can appear unstable or stable
+depending on the representation layer
+
+This connects directly to the OMNIABASE principle:
+
+structure stronger than representation
+
+
+---
+
+Core idea
 
 The three-body problem is governed by simple deterministic laws, but its trajectories can become highly sensitive to initial conditions.
 
@@ -34,7 +90,6 @@ OMNIA-THREE-BODY measures this transition structurally.
 
 It does not ask:
 
-```text
 Where will the bodies be exactly?
 
 It asks:
@@ -63,6 +118,8 @@ residual trajectory coherence
 accumulated divergence
 
 loss of structural similarity under perturbation
+
+representation-dependent stability
 
 
 
@@ -128,23 +185,43 @@ Controlled perturbation sweep:
   }
 ]
 
-Observed structure:
 
-ε increases
-↓
-TΔ decreases
-Ω decreases
-IRI increases
+---
+
+Cross-representation result
+
+{
+  "cartesian_coordinates": {
+    "T_delta": 1345,
+    "Omega": 0.33353144232183113,
+    "IRI": 1.9982180781477268
+  },
+  "pairwise_distances": {
+    "T_delta": 827,
+    "Omega": 0.14553109791625538,
+    "IRI": 5.871383603354944
+  },
+  "total_energy": {
+    "T_delta": -1,
+    "Omega": 0.7443741914232316,
+    "IRI": 0.3434103593624276
+  },
+  "angular_momentum": {
+    "T_delta": -1,
+    "Omega": 0.9999999999999933,
+    "IRI": 6.7288397076481484e-15
+  },
+  "center_of_mass": {
+    "T_delta": -1,
+    "Omega": 0.9999666677777395,
+    "IRI": 3.333333333474693e-05
+  }
+}
 
 Interpretation:
 
-larger initial perturbation
-=
-shorter coherence survival time
-+
-lower residual coherence
-+
-higher irreversible divergence
+local trajectory representations collapse,
+while global invariant representations remain structurally stable.
 
 
 ---
@@ -206,18 +283,26 @@ greater irreversible divergence
 
 Generated outputs
 
-Running the demo and sweep generates:
+Running the demo, sweep, and representation analysis generates:
 
 results/
 ├── structural_divergence.png
 ├── trajectory_divergence.png
 ├── omnia_three_body_dashboard.png
+├── three_body_metrics.json
 ├── perturbation_sweep.json
 ├── tdelta_vs_perturbation.png
 ├── omega_vs_perturbation.png
 ├── iri_vs_perturbation.png
 ├── perturbation_sweep_dashboard.png
-└── three_body_metrics.json
+├── representation_comparison.json
+└── representation_comparison.png
+
+The scripts may also generate temporary NumPy arrays:
+
+results/traj_ref.npy
+results/traj_pert.npy
+results/distances.npy
 
 
 ---
@@ -235,6 +320,21 @@ python examples/run_three_body_demo.py
 Run the perturbation sweep:
 
 python examples/run_perturbation_sweep.py
+
+Run the cross-representation analysis:
+
+python examples/run_representation_analysis.py
+
+
+---
+
+Documentation
+
+Detailed notes:
+
+docs/THREE_BODY_STRUCTURAL_DIVERGENCE.md
+docs/PERTURBATION_REGIMES.md
+docs/CROSS_REPRESENTATION_DIVERGENCE.md
 
 
 ---
@@ -288,6 +388,13 @@ Core principle:
 
 measurement != inference != decision
 
+Related repositories:
+
+OMNIA
+OMNIABASE
+OMNIA-LIMIT
+OMNIA-RADAR
+
 
 ---
 
@@ -295,4 +402,3 @@ Author
 
 Massimiliano Brighindi
 Project: MB-X.01
-
