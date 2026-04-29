@@ -733,8 +733,7 @@ File vuoto.
 8. results/.gitkeep
 
 
-
-File vuoto.
+file_00000000f6e071f49df25e52350fbe24.png.jpg
 
 
 ---
