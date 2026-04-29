@@ -724,8 +724,7 @@ results/*.npy
 7. data/.gitkeep
 
 
-
-File vuoto.
+file_00000000f6e071f49df25e52350fbe24.png.jpg
 
 
 ---
@@ -733,7 +732,7 @@ File vuoto.
 8. results/.gitkeep
 
 
-file_00000000f6e071f49df25e52350fbe24.png.jpg
+
 
 
 ---
