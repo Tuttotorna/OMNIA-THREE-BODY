@@ -10,6 +10,14 @@ It uses the three-body problem as a canonical stress test for OMNIA:
 
 ---
 
+## Visual result
+
+Structural divergence under minimal perturbation:
+
+![OMNIA Three Body Dashboard](https://raw.githubusercontent.com/Tuttotorna/OMNIA-THREE-BODY/main/results/omnia_three_body_dashboard.png)
+
+---
+
 ## Core idea
 
 The three-body problem is governed by simple deterministic laws, but its trajectories can become highly sensitive to initial conditions.
@@ -24,15 +32,6 @@ Where will the bodies be exactly?
 It asks:
 
 How long does the system preserve structural coherence?
-
-
----
-
-Visual result
-
-Structural divergence under minimal perturbation:
-
-
 
 
 ---
