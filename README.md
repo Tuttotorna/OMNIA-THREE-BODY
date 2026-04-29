@@ -18,6 +18,14 @@ Structural divergence under minimal perturbation:
 
 ---
 
+## Perturbation sweep
+
+Structural response under increasing perturbation:
+
+![Perturbation Sweep Dashboard](https://raw.githubusercontent.com/Tuttotorna/OMNIA-THREE-BODY/main/results/perturbation_sweep_dashboard.png)
+
+---
+
 ## Core idea
 
 The three-body problem is governed by simple deterministic laws, but its trajectories can become highly sensitive to initial conditions.
@@ -83,6 +91,64 @@ Accumulated irreversible divergence is IRI ≈ 1.9982.
 
 ---
 
+Perturbation sweep result
+
+Controlled perturbation sweep:
+
+[
+  {
+    "epsilon": 1e-06,
+    "T_delta": -1,
+    "Omega": 0.9728208145236964,
+    "IRI": 0.027938532020011158
+  },
+  {
+    "epsilon": 1e-05,
+    "T_delta": -1,
+    "Omega": 0.7904666344102294,
+    "IRI": 0.26507553446086235
+  },
+  {
+    "epsilon": 0.0001,
+    "T_delta": 1345,
+    "Omega": 0.33353144232183113,
+    "IRI": 1.9982180781477268
+  },
+  {
+    "epsilon": 0.001,
+    "T_delta": 530,
+    "Omega": 0.08966687780479642,
+    "IRI": 10.152390096340664
+  },
+  {
+    "epsilon": 0.01,
+    "T_delta": 451,
+    "Omega": 0.0541844638036885,
+    "IRI": 17.455474684090664
+  }
+]
+
+Observed structure:
+
+ε increases
+↓
+TΔ decreases
+Ω decreases
+IRI increases
+
+Interpretation:
+
+larger initial perturbation
+=
+shorter coherence survival time
++
+lower residual coherence
++
+higher irreversible divergence
+
+
+---
+
 Minimal pipeline
 
 initial state
@@ -109,6 +175,8 @@ The first timestep where structural divergence exceeds the chosen threshold.
 lower TΔ
 =
 faster structural instability
+
+TΔ = -1 means that the divergence threshold was not crossed within the simulated horizon.
 
 
 ---
@@ -138,12 +206,17 @@ greater irreversible divergence
 
 Generated outputs
 
-Running the demo generates:
+Running the demo and sweep generates:
 
 results/
 ├── structural_divergence.png
 ├── trajectory_divergence.png
 ├── omnia_three_body_dashboard.png
+├── perturbation_sweep.json
+├── tdelta_vs_perturbation.png
+├── omega_vs_perturbation.png
+├── iri_vs_perturbation.png
+├── perturbation_sweep_dashboard.png
 └── three_body_metrics.json
 
 
@@ -155,13 +228,13 @@ Install dependencies:
 
 pip install -r requirements.txt
 
-Run the demo:
+Run the base demo:
 
 python examples/run_three_body_demo.py
 
-Run the dashboard generator:
+Run the perturbation sweep:
 
-python examples/make_dashboard.py
+python examples/run_perturbation_sweep.py
 
 
 ---
@@ -199,6 +272,8 @@ solution of the three-body problem
 
 universal forecasting
 
+discovery of a universal instability constant
+
 
 The purpose is structural measurement only.
 
@@ -220,3 +295,4 @@ Author
 
 Massimiliano Brighindi
 Project: MB-X.01
+
