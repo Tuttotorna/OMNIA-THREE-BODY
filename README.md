@@ -1,549 +1,290 @@
 # OMNIA-THREE-BODY
 
-
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19895700.svg)](https://doi.org/10.5281/zenodo.19895700)
 
-Structural divergence measurement for chaotic three-body dynamics under controlled perturbations.
+**OMNIA-THREE-BODY** is an experimental structural dynamics repository for measuring divergence, perturbation sensitivity, and representation-dependent stability in three-body trajectories.
 
-This repository does **not** solve the three-body problem.
+It does **not** solve the three-body problem.
 
-It uses the three-body problem as a canonical stress test for OMNIA:
+It is not a general physics simulator.
 
-> when does a deterministic system stop preserving recognizable structure under small perturbations?
+It is not a truth oracle.
 
----
+It is not a semantic judge.
 
-## Visual result
+It is a structural measurement testbed.
 
-Structural divergence under minimal perturbation:
-
-![OMNIA Three Body Dashboard](https://raw.githubusercontent.com/Tuttotorna/OMNIA-THREE-BODY/main/results/omnia_three_body_dashboard.png)
-
----
-
-## Perturbation sweep
-
-Structural response under increasing perturbation:
-
-![Perturbation Sweep Dashboard](https://raw.githubusercontent.com/Tuttotorna/OMNIA-THREE-BODY/main/results/perturbation_sweep_dashboard.png)
-
-Observed structure:
+Core boundary:
 
 ```text
-ε increases
-↓
-TΔ decreases
-Ω decreases
-IRI increases
+measurement != inference != decision
+```
 
-Interpretation:
-
-larger initial perturbation
-=
-shorter coherence survival time
-+
-lower residual coherence
-+
-higher irreversible divergence
-
+Decision remains external.
 
 ---
 
-Cross-representation divergence
+## Current role
 
-The same three-body dynamics can collapse in one representation while remaining stable in another.
+The three-body problem is used here as a canonical stress case:
 
+```text
+simple deterministic law
++ small perturbation
++ sensitive trajectory evolution
++ representation-dependent stability
+= useful structural divergence testbed
+```
 
+The repository asks:
 
-Observed structure:
-
-cartesian coordinates
-→ strong divergence
-
-pairwise distances
-→ even faster collapse
-
-total energy
-→ relatively stable
-
-angular momentum
-→ almost invariant
-
-center of mass
-→ almost invariant
-
-Core observation:
-
-the same system
-can appear unstable or stable
-depending on the representation layer
-
-This connects directly to the OMNIABASE principle:
-
-structure stronger than representation
-
-
----
-
-Core idea
-
-The three-body problem is governed by simple deterministic laws, but its trajectories can become highly sensitive to initial conditions.
-
-OMNIA-THREE-BODY measures this transition structurally.
-
-It does not ask:
-
-Where will the bodies be exactly?
-
-It asks:
-
+```text
 How long does the system preserve structural coherence?
+When does the perturbed trajectory diverge structurally?
+Which representations collapse first?
+Which representations remain stable?
+```
 
-
----
-
-Canonical claim
-
-OMNIA does not solve chaotic dynamics.
-OMNIA measures when structural coherence collapses.
-
+It does not ask for exact future-state prediction.
 
 ---
 
-What is measured
+## What is measured
 
 Given a reference three-body simulation and a minimally perturbed variant, the repository measures:
 
-structural divergence time
+- structural divergence time
+- residual trajectory coherence
+- accumulated divergence
+- loss of structural similarity under perturbation
+- representation-dependent stability
 
-residual trajectory coherence
-
-accumulated divergence
-
-loss of structural similarity under perturbation
-
-representation-dependent stability
-
-
+This is structural measurement, not physical proof.
 
 ---
 
-First result
+## What this repository is not
 
-Minimal controlled perturbation test:
+OMNIA-THREE-BODY does not claim:
 
-{
-  "T_delta": 1345,
-  "Omega": 0.33353144232183113,
-  "IRI": 1.9982180781477268,
-  "threshold": 0.5,
-  "steps": 4000,
-  "dt": 0.005
-}
+- solution of the three-body problem
+- new physics
+- violation of known physics
+- universal forecasting
+- exact long-horizon prediction
+- discovery of a universal instability constant
+- semantic interpretation
+- decision authority
 
-Interpretation:
+It is not physics in the sense of proposing a new physical law.
 
-The system preserves structural coherence until step 1345.
-After that point, the perturbed trajectory crosses the divergence threshold.
-Final residual coherence is Ω ≈ 0.3335.
-Accumulated irreversible divergence is IRI ≈ 1.9982.
-
+It uses a physical-style dynamical system as a stress test for structural measurement.
 
 ---
 
-Perturbation sweep result
+## Main observation
 
-Controlled perturbation sweep:
+The core observation is representation-dependent structural collapse:
 
-[
-  {
-    "epsilon": 1e-06,
-    "T_delta": -1,
-    "Omega": 0.9728208145236964,
-    "IRI": 0.027938532020011158
-  },
-  {
-    "epsilon": 1e-05,
-    "T_delta": -1,
-    "Omega": 0.7904666344102294,
-    "IRI": 0.26507553446086235
-  },
-  {
-    "epsilon": 0.0001,
-    "T_delta": 1345,
-    "Omega": 0.33353144232183113,
-    "IRI": 1.9982180781477268
-  },
-  {
-    "epsilon": 0.001,
-    "T_delta": 530,
-    "Omega": 0.08966687780479642,
-    "IRI": 10.152390096340664
-  },
-  {
-    "epsilon": 0.01,
-    "T_delta": 451,
-    "Omega": 0.0541844638036885,
-    "IRI": 17.455474684090664
-  }
-]
+```text
+local trajectory representations can collapse
+while global invariant representations remain stable
+```
 
+Observed example:
+
+```text
+cartesian coordinates -> strong divergence
+pairwise distances    -> faster collapse
+total energy          -> relatively stable
+angular momentum      -> almost invariant
+center of mass        -> almost invariant
+```
+
+This connects directly to the OMNIABASE principle:
+
+```text
+structure is not exhausted by one representation
+```
 
 ---
 
-Cross-representation result
+## Metrics
 
-{
-  "cartesian_coordinates": {
-    "T_delta": 1345,
-    "Omega": 0.33353144232183113,
-    "IRI": 1.9982180781477268
-  },
-  "pairwise_distances": {
-    "T_delta": 827,
-    "Omega": 0.14553109791625538,
-    "IRI": 5.871383603354944
-  },
-  "total_energy": {
-    "T_delta": -1,
-    "Omega": 0.7443741914232316,
-    "IRI": 0.3434103593624276
-  },
-  "angular_momentum": {
-    "T_delta": -1,
-    "Omega": 0.9999999999999933,
-    "IRI": 6.7288397076481484e-15
-  },
-  "center_of_mass": {
-    "T_delta": -1,
-    "Omega": 0.9999666677777395,
-    "IRI": 3.333333333474693e-05
-  }
-}
-
-Interpretation:
-
-local trajectory representations collapse,
-while global invariant representations remain structurally stable.
-
-
----
-
-Minimal pipeline
-
-initial state
-↓
-controlled perturbation
-↓
-three-body simulation
-↓
-structural comparison
-↓
-divergence threshold
-↓
-persistent metrics + visual output
-
-
----
-
-Metrics
-
-TΔ — Structural Divergence Time
+### TΔ — Structural Divergence Time
 
 The first timestep where structural divergence exceeds the chosen threshold.
 
-lower TΔ
-=
-faster structural instability
+```text
+lower TΔ = faster structural instability
+TΔ = -1 means threshold not crossed within the simulated horizon
+```
 
-TΔ = -1 means that the divergence threshold was not crossed within the simulated horizon.
-
-
----
-
-Ω — Residual Structural Coherence
+### Ω — Residual Structural Coherence
 
 A normalized measure of remaining structural coherence.
 
+```text
 Ω = 1 / (1 + IRI)
+```
 
-Ω ≈ 1.0  -> high residual coherence
-Ω ≈ 0.0  -> structural collapse
+Reading:
 
+```text
+Ω ≈ 1.0 -> high residual coherence
+Ω ≈ 0.0 -> structural collapse
+```
 
----
+### IRI — Irreversibility Index
 
-IRI — Irreversibility Index
+The accumulated structural distance between reference and perturbed trajectories.
 
-The final accumulated structural distance between reference and perturbed trajectories.
-
-higher IRI
-=
-greater irreversible divergence
-
-
----
-
-Generated outputs
-
-Running the demo, sweep, and representation analysis generates:
-
-results/
-├── structural_divergence.png
-├── trajectory_divergence.png
-├── omnia_three_body_dashboard.png
-├── three_body_metrics.json
-├── perturbation_sweep.json
-├── tdelta_vs_perturbation.png
-├── omega_vs_perturbation.png
-├── iri_vs_perturbation.png
-├── perturbation_sweep_dashboard.png
-├── representation_comparison.json
-└── representation_comparison.png
-
-The scripts may also generate temporary NumPy arrays:
-
-results/traj_ref.npy
-results/traj_pert.npy
-results/distances.npy
-
+```text
+higher IRI = greater irreversible divergence
+```
 
 ---
 
-Run
+## Minimal pipeline
+
+```text
+initial state
+  -> controlled perturbation
+  -> three-body simulation
+  -> structural comparison
+  -> divergence threshold
+  -> persistent metrics + visual output
+```
+
+---
+
+## Visual results
+
+Structural divergence dashboard:
+
+![OMNIA Three Body Dashboard](https://raw.githubusercontent.com/Tuttotorna/OMNIA-THREE-BODY/main/results/omnia_three_body_dashboard.png)
+
+Perturbation sweep dashboard:
+
+![Perturbation Sweep Dashboard](https://raw.githubusercontent.com/Tuttotorna/OMNIA-THREE-BODY/main/results/perturbation_sweep_dashboard.png)
+
+---
+
+## Generated outputs
+
+Current tracked outputs include:
+
+```text
+results/three_body_metrics.json
+results/perturbation_sweep.json
+results/representation_comparison.json
+results/omnia_three_body_dashboard.png
+results/perturbation_sweep_dashboard.png
+results/representation_comparison.png
+```
+
+---
+
+## Run
 
 Install dependencies:
 
-pip install -r requirements.txt
+```bash
+python -m pip install -r requirements.txt
+python -m pip install -e .
+```
 
-Run the base demo:
+Run checks:
 
+```bash
+python -m pytest
+```
+
+Run examples:
+
+```bash
 python examples/run_three_body_demo.py
-
-Run the perturbation sweep:
-
 python examples/run_perturbation_sweep.py
-
-Run the cross-representation analysis:
-
 python examples/run_representation_analysis.py
-
-
----
-
-Documentation
-
-Detailed notes:
-
-docs/THREE_BODY_STRUCTURAL_DIVERGENCE.md
-docs/PERTURBATION_REGIMES.md
-docs/CROSS_REPRESENTATION_DIVERGENCE.md
-
+```
 
 ---
 
-Why the three-body problem?
+## Documentation
 
-Because it is a clean boundary case:
+Public entrypoints:
 
-simple law
-+
-deterministic evolution
-+
-minimal perturbation
-+
-high sensitivity
-+
-structural instability
+- [`docs/THREE_BODY_SCOPE.md`](docs/THREE_BODY_SCOPE.md)
+- [`docs/RESULTS_INDEX.md`](docs/RESULTS_INDEX.md)
+- [`docs/REPOSITORY_STATUS.md`](docs/REPOSITORY_STATUS.md)
 
-This makes it an ideal testbed for measuring divergence, fragility, and loss of structural coherence.
+Legacy / detailed notes:
 
+- [`docs/THREE_BODY_STRUCTURAL_DIVERGENCE.md`](docs/THREE_BODY_STRUCTURAL_DIVERGENCE.md)
+- [`docs/PERTURBATION_REGIMES.md`](docs/PERTURBATION_REGIMES.md)
+- [`docs/CROSS_REPRESENTATION_DIVERGENCE.md`](docs/CROSS_REPRESENTATION_DIVERGENCE.md)
 
 ---
 
-Important boundary
+## Ecosystem position
 
-This repository does not claim:
-
-prediction of exact future states
-
-violation of known physics
-
-elimination of chaos
-
-solution of the three-body problem
-
-universal forecasting
-
-discovery of a universal instability constant
-
-
-The purpose is structural measurement only.
-
-
----
-
-Ecosystem
-
-Part of the MB-X.01 / OMNIA ecosystem.
-
-Core principle:
-
-measurement != inference != decision
-
-Related repositories:
-
-OMNIA
-OMNIABASE
-OMNIA-LIMIT
-OMNIA-RADAR
-
----
-
+Part of the MB-X.01 / OMNIA ecosystem:
 
 ```text
-LON-MIRROR
-|
-├── CORE
-|   ├── OMNIA
-|   ├── OMNIA-INVARIANCE
-|   ├── omnia-limit
-|   └── OMNIA-RADAR
-|
-├── RESEARCH
-|   ├── OMNIA-CONSTANT
-|   └── OMNIA-THREE-BODY
-|
-├── REPRESENTATION
-|   └── OMNIABASE
-|
-└── APPLICATIONS
-    ├── OMNIA-SECURITY
-    ├── OMNIA-CRYPTO
-    └── OMNIAMIND
+OMNIABASE         = representation / multi-base observation layer
+OMNIA             = structural measurement core
+OMNIA-INVARIANCE  = invariance / trajectory-space analysis
+OMNIA-THREE-BODY  = experimental structural dynamics layer
+OMNIA-VALIDATION  = evidence / reproducibility layer
+Decision           = external layer
+```
 
-Root
+The boundary remains strict:
 
-LON-MIRROR
-
-
-Canonical ecosystem hub, lineage map, navigation layer, and coordination entry point.
-
-
----
-
-Core
-
-OMNIA
-
-
-Core structural measurement framework.
-
-OMNIA-INVARIANCE
-
-
-Core validation and invariance-testing repository.
-Focuses on structural invariance, perturbation behavior, and controlled evidence around Ω under transformation.
-
-omnia-limit
-
-
-Structural stopping conditions, saturation, irreducibility, and limit behavior.
-
-OMNIA-RADAR
-
-
-Structural drift surfacing and trajectory visualization layer.
-
-
----
-
-Research
-
-OMNIA-CONSTANT
-
-
-Post-analysis and falsification repository for Ω-region behavior.
-Current focus: whether observed Ω corridors behave as structural transition regimes or collapse as measurement artifacts.
-No universal structural constant is declared.
-
-OMNIA-THREE-BODY
-
-
-Experimental dynamics repository for multi-body structural interaction tests.
-Focuses on instability, trajectory interaction, and non-trivial structural behavior under interacting perturbations.
-
-
----
-
-Representation
-
-OMNIABASE
-
-
-Multi-base structural representation and invariance exploration layer.
-
-
----
-
-Applications
-
-OMNIA-SECURITY
-
-
-Bounded structural diagnostics for security-relevant systems.
-
-OMNIA-CRYPTO
-
-
-Bounded structural diagnostics for cryptographic behavior.
-
-OMNIAMIND
-
-
-Bounded structural diagnostics for cognitive and reasoning-related behavior.
-
-
----
-
-Architectural Separation
-
-LON-MIRROR
-=
-ecosystem hub
-
-OMNIA
-=
-core structural measurement layer
-
-OMNIA-INVARIANCE
-=
-core invariance validation layer
-
-OMNIA-CONSTANT
-=
-post-analysis / falsification layer for Ω-region behavior
-
-OMNIA-THREE-BODY
-=
-experimental structural dynamics layer
-
-Other repositories
-=
-representation layers,
-limit layers,
-visualization layers,
-or bounded domain verticalizations.
-
-
----
-
-Core Boundary
-
+```text
 measurement != inference != decision
+```
+
 ---
 
-Author
+## Related repositories
 
-Massimiliano Brighindi
-Project: MB-X.01
+- lon-mirror: https://github.com/Tuttotorna/lon-mirror
+- OMNIABASE: https://github.com/Tuttotorna/OMNIABASE
+- OMNIA: https://github.com/Tuttotorna/OMNIA
+- OMNIA-INVARIANCE: https://github.com/Tuttotorna/OMNIA-INVARIANCE
+- OMNIA-VALIDATION: https://github.com/Tuttotorna/OMNIA-VALIDATION
+- OMNIA-RADAR: https://github.com/Tuttotorna/OMNIA-RADAR
+
+---
+
+## Citation
+
+If you reference this repository, use the archived Zenodo record:
+
+```text
+DOI: 10.5281/zenodo.19895700
+https://doi.org/10.5281/zenodo.19895700
+```
+
+Citation metadata is available in:
+
+- [`CITATION.cff`](CITATION.cff)
+
+---
+
+## Summary
+
+OMNIA-THREE-BODY is an experimental structural dynamics layer.
+
+It uses three-body trajectories as a stress test for structural divergence measurement.
+
+It is not a physics solver.
+
+It is not a truth oracle.
+
+Its central boundary is:
+
+```text
+measurement != inference != decision
+```

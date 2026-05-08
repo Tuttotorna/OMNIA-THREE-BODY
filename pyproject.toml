@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "omnia-three-body"
+version = "0.1.0"
+description = "Experimental structural dynamics layer for three-body perturbation and divergence measurement."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+  { name = "Massimiliano Brighindi", email = "brighissimo@users.noreply.github.com" }
+]
+license = { file = "LICENSE" }
+dependencies = ["numpy", "matplotlib"]
+keywords = ["omnia", "three-body", "structural-dynamics", "trajectory-divergence", "perturbation"]
+
+[project.urls]
+Repository = "https://github.com/Tuttotorna/OMNIA-THREE-BODY"
+DOI = "https://doi.org/10.5281/zenodo.19895700"
+
+[tool.setuptools]
+py-modules = []
