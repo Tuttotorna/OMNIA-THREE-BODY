@@ -4,15 +4,55 @@
 
 [![DOI](https://zenodo.org/badge/1224623666.svg)](https://zenodo.org/badge/latestdoi/1224623666)
 
-Release DOI: [10.5281/zenodo.19895700](https://doi.org/10.5281/zenodo.19895700)
+Release DOI:
 
-GitHub release: [OMNIA-THREE-BODY v1.0.0 release](https://github.com/Tuttotorna/OMNIA-THREE-BODY/releases/tag/v1.0.0)
+    10.5281/zenodo.19895700
+
+Zenodo latest DOI link:
+
+    https://doi.org/10.5281/zenodo.19895700
+
+GitHub release:
+
+    https://github.com/Tuttotorna/OMNIA-THREE-BODY/releases/tag/v1.0.0
+
+**Dynamic divergence stress test.**
+
+OMNIA-THREE-BODY is the chaotic dynamics stress-test layer of the MB-X.01 / OMNIA ecosystem.
+
+Its role is narrow:
+
+    initial state -> perturbation -> trajectory divergence -> structural instability
+
+It asks one question:
+
+    how does structural behavior diverge when a dynamic system is perturbed?
+
+OMNIA-THREE-BODY is not the ecosystem landing page.
+
+It is not the validation showroom.
+
+It is not the OMNIA core measurement engine.
+
+It is not a physics proof.
+
+It is not a claim that OMNIA replaces physical simulation validation.
+
+It is a stress test for observing structural divergence under controlled perturbation.
+
+Canonical boundary:
+
+    measurement != inference != decision
+
+    Decision remains external
+
+---
 
 ## Start here
 
 From a clean environment:
 
-    git clone [OMNIA-THREE-BODY.git](https://github.com/Tuttotorna/OMNIA-THREE-BODY.git)
+    git clone https://github.com/Tuttotorna/OMNIA-THREE-BODY.git
     cd OMNIA-THREE-BODY
     python -m pip install -e .
     pytest
@@ -125,19 +165,35 @@ Meaning:
 
 ---
 
+## Related repositories
+
+| Repository | Role |
+|---|---|
+| [lon-mirror](https://github.com/Tuttotorna/lon-mirror) | Canonical ecosystem entry point |
+| [OMNIA-VALIDATION](https://github.com/Tuttotorna/OMNIA-VALIDATION) | Public validation showroom |
+| [OMNIA](https://github.com/Tuttotorna/OMNIA) | Core structural measurement engine |
+| [OMNIABASE](https://github.com/Tuttotorna/OMNIABASE) | Representation invariance foundation |
+| [OMNIA-RADAR](https://github.com/Tuttotorna/OMNIA-RADAR) | Structural signal detection layer |
+| [OMNIA-INVARIANCE](https://github.com/Tuttotorna/OMNIA-INVARIANCE) | Transformation and invariance layer |
+| [omnia-limit](https://github.com/Tuttotorna/omnia-limit) | Stop / continue boundary layer |
+| [OMNIA-CONSTANT](https://github.com/Tuttotorna/OMNIA-CONSTANT) | Stable-region falsification layer |
+| [OMNIAMIND](https://github.com/Tuttotorna/OMNIAMIND) | Structural cognition orchestration layer |
+
+---
+
 ## Ecosystem entry point
 
 For the full ecosystem map, start here:
 
-[lon-mirror](https://github.com/Tuttotorna/lon-mirror)
+    https://github.com/Tuttotorna/lon-mirror
 
 For public validation artifacts, start here:
 
-[OMNIA-VALIDATION](https://github.com/Tuttotorna/OMNIA-VALIDATION)
+    https://github.com/Tuttotorna/OMNIA-VALIDATION
 
 For core structural measurement, start here:
 
-[OMNIA](https://github.com/Tuttotorna/OMNIA)
+    https://github.com/Tuttotorna/OMNIA
 
 ---
 
@@ -148,32 +204,7 @@ For core structural measurement, start here:
     not a semantic judge
     not a general physics simulator
 
-## Related repositories
-
-| Repository | Role |
-|---|---|
-| [lon-mirror](https://github.com/Tuttotorna/lon-mirror) | Canonical public entry point |
-| [OMNIA-VALIDATION](https://github.com/Tuttotorna/OMNIA-VALIDATION) | Public validation showroom |
-| [OMNIA](https://github.com/Tuttotorna/OMNIA) | Core structural measurement engine |
-| [OMNIABASE](https://github.com/Tuttotorna/OMNIABASE) | Representation invariance foundation |
-| [omnia-limit](https://github.com/Tuttotorna/omnia-limit) | Stop / continue boundary layer |
-| [OMNIA-RADAR](https://github.com/Tuttotorna/OMNIA-RADAR) | Structural signal detection layer |
-| [OMNIA-INVARIANCE](https://github.com/Tuttotorna/OMNIA-INVARIANCE) | Structural invariance layer |
-| [OMNIA-CONSTANT](https://github.com/Tuttotorna/OMNIA-CONSTANT) | Structural constant candidate layer |
-| [OMNIAMIND](https://github.com/Tuttotorna/OMNIAMIND) | Structural cognition orchestration layer |
-| [OMNIA-THREE-BODY](https://github.com/Tuttotorna/OMNIA-THREE-BODY) | Dynamic divergence stress test |
-| [OMNIA-SECURITY](https://github.com/Tuttotorna/OMNIA-SECURITY) | Bounded structural security diagnostics |
-| [OMNIA-CRYPTO](https://github.com/Tuttotorna/OMNIA-CRYPTO) | Bounded structural crypto diagnostics |
-
----
-
-## Boundary and smoke-test required terms
-
-    measurement != inference != decision
-    It is not a physics proof
-
----
-
 ## License
 
 MIT.
+
