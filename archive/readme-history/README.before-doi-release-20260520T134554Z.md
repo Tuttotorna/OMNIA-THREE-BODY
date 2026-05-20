@@ -1,21 +1,5 @@
 # OMNIA-THREE-BODY
 
-## DOI
-
-[![DOI](https://zenodo.org/badge/1224623666.svg)](https://zenodo.org/badge/latestdoi/1224623666)
-
-Release DOI:
-
-    10.5281/zenodo.19895700
-
-Zenodo latest DOI link:
-
-    https://doi.org/10.5281/zenodo.19895700
-
-GitHub release:
-
-    https://github.com/Tuttotorna/OMNIA-THREE-BODY/releases/tag/v1.0.0
-
 **Dynamic divergence stress test.**
 
 OMNIA-THREE-BODY is the chaotic dynamics stress-test layer of the MB-X.01 / OMNIA ecosystem.
