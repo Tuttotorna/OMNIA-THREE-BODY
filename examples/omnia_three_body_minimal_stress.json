@@ -1,0 +1,21 @@
+{
+  "case_id": "omnia-three-body-minimal-stress-v0",
+  "purpose": "Demonstrate the OMNIA-THREE-BODY stress-test contract without claiming physical proof.",
+  "boundary": "measurement != inference != decision",
+  "pipeline": [
+    "initial state",
+    "perturbation",
+    "trajectory divergence",
+    "structural instability",
+    "external validation"
+  ],
+  "initial_state": "placeholder initial state",
+  "perturbation": "placeholder perturbation",
+  "simulation_params": {},
+  "trajectory_ref": "placeholder trajectory artifact",
+  "divergence_signal": "placeholder divergence signal",
+  "structural_instability": null,
+  "result": "inconclusive",
+  "limitation": "This placeholder artifact defines the public three-body stress-test shape. It is not a physics result.",
+  "external_validation": "Decision remains external; artifacts should be validated through OMNIA-VALIDATION."
+}

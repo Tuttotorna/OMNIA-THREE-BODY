@@ -1,0 +1,80 @@
+{
+  "generated_utc": "2026-05-20T13:15:57.795696+00:00",
+  "repository": "OMNIA-THREE-BODY",
+  "role": "dynamic divergence stress test",
+  "ecosystem": "MB-X.01 / OMNIA",
+  "canonical_boundary": "measurement != inference != decision",
+  "three_body_pipeline": [
+    "initial state",
+    "perturbation",
+    "trajectory divergence",
+    "structural instability",
+    "external validation"
+  ],
+  "public_claim": "OMNIA-THREE-BODY is a dynamic stress test for observing structural divergence under small perturbations in a chaotic system.",
+  "non_claims": [
+    "does not prove physical truth",
+    "does not replace physics simulation validation",
+    "does not infer semantic truth",
+    "does not decide correctness",
+    "does not replace OMNIA measurement",
+    "does not replace OMNIA-VALIDATION",
+    "does not convert divergence into final decision"
+  ],
+  "expected_docs": [
+    "README.md",
+    "docs/QUICKSTART_THREE_BODY.md",
+    "docs/THREE_BODY_OVERVIEW.md",
+    "docs/TRAJECTORY_CONTRACT.md",
+    "docs/DIVERGENCE_AND_INSTABILITY.md",
+    "docs/BOUNDARY.md",
+    "docs/THREE_BODY_MANIFEST.json"
+  ],
+  "related_repositories": [
+    {
+      "name": "lon-mirror",
+      "url": "https://github.com/Tuttotorna/lon-mirror",
+      "role": "Canonical ecosystem entry point"
+    },
+    {
+      "name": "OMNIA-VALIDATION",
+      "url": "https://github.com/Tuttotorna/OMNIA-VALIDATION",
+      "role": "Public validation showroom"
+    },
+    {
+      "name": "OMNIA",
+      "url": "https://github.com/Tuttotorna/OMNIA",
+      "role": "Core structural measurement engine"
+    },
+    {
+      "name": "OMNIABASE",
+      "url": "https://github.com/Tuttotorna/OMNIABASE",
+      "role": "Representation invariance foundation"
+    },
+    {
+      "name": "OMNIA-RADAR",
+      "url": "https://github.com/Tuttotorna/OMNIA-RADAR",
+      "role": "Structural signal detection layer"
+    },
+    {
+      "name": "OMNIA-INVARIANCE",
+      "url": "https://github.com/Tuttotorna/OMNIA-INVARIANCE",
+      "role": "Transformation and invariance layer"
+    },
+    {
+      "name": "omnia-limit",
+      "url": "https://github.com/Tuttotorna/omnia-limit",
+      "role": "Stop / continue boundary layer"
+    },
+    {
+      "name": "OMNIA-CONSTANT",
+      "url": "https://github.com/Tuttotorna/OMNIA-CONSTANT",
+      "role": "Stable-region falsification layer"
+    },
+    {
+      "name": "OMNIAMIND",
+      "url": "https://github.com/Tuttotorna/OMNIAMIND",
+      "role": "Structural cognition orchestration layer"
+    }
+  ]
+}
