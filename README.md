@@ -1,16 +1,35 @@
+<!-- MB-X.01 LON RELEASE:START -->
+
+## MB-X.01 / L.O.N. release state
+
+Repository: Tuttotorna/OMNIA-THREE-BODY
+Release tag: v2026.05.21
+Release commit: f84a928
+Release DOI: 10.5281/zenodo.20322693
+
+Boundary:
+
+measurement != validation
+validation != orchestration
+orchestration != decision
+decision != measurement
+
+<!-- MB-X.01 LON RELEASE:END -->
+
 # OMNIA-THREE-BODY
 
 <!-- ZENODO DOI:START -->
 
 ## DOI
 
-[![DOI](https://zenodo.org/badge/1224623666.svg)](https://zenodo.org/badge/latestdoi/1224623666)
+[![DOI](https://zenodo.org/badge/DOI/10.5281%2Fzenodo.20322693.svg)](https://doi.org/10.5281/zenodo.20322693)
 
 Zenodo DOI badge for this repository.
 
 Repository: Tuttotorna/OMNIA-THREE-BODY
 GitHub repository id: 1224623666
-Latest release DOI: pending Zenodo publication or resolved dynamically by Zenodo badge
+Release tag: v2026.05.21
+Latest release DOI: 10.5281/zenodo.20322693
 
 <!-- ZENODO DOI:END -->
 
