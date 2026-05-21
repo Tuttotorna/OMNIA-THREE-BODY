@@ -63,7 +63,7 @@ Correct use:
 
 Incorrect use:
 
-    treat divergence as universal proof
+    treat divergence as reproducible validation evidence
     treat simulation as physical truth
     treat instability as final decision
     treat stress test as complete theory

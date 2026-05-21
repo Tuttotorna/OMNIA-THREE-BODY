@@ -1,0 +1,77 @@
+{
+  "repository": "OMNIA-THREE-BODY",
+  "timestamp_utc": "2026-05-21T16:46:56Z",
+  "active_before_count": 1,
+  "active_after_count": 0,
+  "safe_before_count": 3,
+  "safe_after_count": 3,
+  "active_before": [
+    {
+      "file": "docs/THREE_BODY_OVERVIEW.md",
+      "line": 66,
+      "patterns": [
+        "\\buniversal\\s+proof\\b"
+      ],
+      "classification": "active_risky_claim",
+      "text": "treat divergence as universal proof"
+    }
+  ],
+  "active_after": [],
+  "safe_after": [
+    {
+      "file": "README.md",
+      "line": 181,
+      "patterns": [
+        "\\btruth\\s+oracle\\b",
+        "\\boracle\\b"
+      ],
+      "classification": "safe_boundary_or_negative",
+      "text": "not a truth oracle"
+    },
+    {
+      "file": "docs/PRODUCTION_READINESS.md",
+      "line": 36,
+      "patterns": [
+        "\\boracle\\b"
+      ],
+      "classification": "safe_boundary_or_negative",
+      "text": "This repository should be treated as part of a layered system, not as an isolated oracle."
+    },
+    {
+      "file": "docs/REPOSITORY_STATUS.md",
+      "line": 44,
+      "patterns": [
+        "\\btruth\\s+oracle\\b",
+        "\\boracle\\b"
+      ],
+      "classification": "safe_boundary_or_negative",
+      "text": "not a truth oracle"
+    }
+  ],
+  "fix": {
+    "changed_files": [
+      "docs/THREE_BODY_OVERVIEW.md"
+    ],
+    "line_changes": [
+      {
+        "file": "docs/THREE_BODY_OVERVIEW.md",
+        "line": 66,
+        "before": "treat divergence as universal proof",
+        "after": "treat divergence as reproducible validation evidence",
+        "applied": [
+          {
+            "pattern": "\\buniversal\\s+proof\\b",
+            "replacement": "reproducible validation evidence"
+          }
+        ]
+      }
+    ]
+  },
+  "tests": {
+    "status": "pass",
+    "passed": null,
+    "failed": 0,
+    "returncode": 0,
+    "summary": "..........                                                               [100%]\n\n"
+  }
+}
